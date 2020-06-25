@@ -8,6 +8,10 @@
 </style>
  <nav class="navbar navbar-dark bg-primary mb-4">
   <div class="container">
-    <a href="." class="navbar-brand">AnimePoll</a>
+    <a href="{% url 'polls:index' %}" class="navbar-brand b-1">AnimePoll</a>
+
+    <a href="{% url 'polls:create' %}" class="navbar-brand b-1">Create Poll</a> 
   </div>
+  
+  
 </nav>
