@@ -1,3 +1,3 @@
 # Django-Poll-App
 This a Django poll app made using tutorials from Traversy Media, Freecodecamp and Django official page.
-![Django-logo](img.icons8.com/ios/50/000000/django.png)
+![Django-logo](/icons8.com/icon/AksudKrBQryM/django)
