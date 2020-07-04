@@ -53,20 +53,14 @@ def CreatePollView(request):
         cform = [ChoiceForm(request.POST,prefix = str(x),instance = Choice()) for x in range(0,3)]
         if qform.is_valid() and all ([cf.is_valid] for cf in cform):
             new_poll = qform.save()
-            q_id = new_poll.id
+            new_poll.save()
             for cf in cform:
                 new_choice = cf.save(commit = False)
                 new_choice.question = new_poll
                 new_choice.save()
-
-               
-            context = {
-                'question_form':qform,
-                'choice_form':cform,
-                'q_id':q_id
-                }
-            return render(request,"polls/create.html",context)
-
+        
+            return HttpResponseRedirect(reverse('polls:index'))
+ 
     else:
         qform = QuestionForm(instance = Question())
         cform = [ChoiceForm(prefix = str(x),instance = Choice()) for x in range(0,3)]

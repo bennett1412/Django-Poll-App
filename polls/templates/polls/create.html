@@ -1,0 +1,13 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+{{question_form.as_p}}
+{% for cf in choice_form %}
+{{ cf.as_p }}
+{% endfor %}
+
+<input type="submit" value="save" class="btn btn-primary btn-sm"/>
+</form>
+{% endblock %}
+

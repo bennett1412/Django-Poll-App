@@ -2,7 +2,7 @@
 
 {% block content %}
 <h3 class="text-center mb-3" >AnimePoll Questions</h3>
-{% if latest_question_list %}
+{% comment %} {% if latest_question_list %} {% endcomment %}
 {% for question in latest_question_list %}
 <div class="card border-secondary mb-3 text-center">
   <div class="card-body p-1 ">
@@ -13,7 +13,7 @@
 </div>
 {% endfor %}
 </ul>
-{% else %}
+{% comment %} {% else %}
 <p>No polls are available</p>
-{% endif %}
+{% endif %} {% endcomment %}
 {% endblock %}
